@@ -22,10 +22,10 @@ import { Meal } from './meal.model';
   `
 })
 
-export class NewTaskComponent {
-  @Output() newTaskSender = new EventEmitter(); //newTaskEmiiter is being created here.
+export class NewMealComponent {
+  @Output() newMealSender = new EventEmitter(); //newTaskEmiiter is being created here.
   createNewMeal(name: string, calories: number, details: string) {
     var newMeal: Meal = new Meal(name, calories, details);
-    this.newTaskSender.emit(newMeal); //newTaskSender is sent over to parent in (), and the value passes (i.e. newMeal) shows up in parent as $event.
+    this.newMealSender.emit(newMeal); //newTaskSender is sent over to parent in (), and the value passes (i.e. newMeal) shows up in parent as $event.
   }
 }
